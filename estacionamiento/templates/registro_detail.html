@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <form method="POST" class="card card-body">
+               <h1 class="text-center">Actualizar datos</h1>
+               <form method="POST">
+                  {% csrf_token %}
+
+                  {{ form.as_p }}
+                  <button class="btn btn-dark mt-3" >
+                     Actualizar
+                  </button>
+                  
+
+                <form action="{% url 'registro_salida' registro.id %}" method="POST">
+                  {% csrf_token %}
+                  <button class="btn btn-dark mt-3" >
+                     Salida
+                  </button>
+                  <form  action="{% url 'eliminar_salida' registro.id %}" method="POST">
+                     {% csrf_token %}
+                     <button class="btn btn-dark mt-3">
+                        Eliminar
+                     </button>
+                  </form>
+               </form>
+               <br>
+            </form> 
+        </div>
+    </div>
+</main>
+
+{% endblock %}

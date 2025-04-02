@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+
+    <main class="container py-5">
+        <section class="card card-body">
+            <h1 class="display-1 text-center">Home</h1>
+            {% load static %}
+            <img src="{% static 'estacionamiento/imagenes/img3.png' %}" class="img-fluid " alt="Responsive image">
+            <p class="text-center">"En Estacionamientos Seguros, tu comodidad y seguridad son nuestra prioridad. Contamos con espacios amplios y seguros para que estaciones tu vehículo con total tranquilidad mientras disfrutas tu visita"</p>
+            <div class="text-center">
+                
+                <a class="btn btn-primary" href="/signin/">
+                    Singin
+                </a>
+                <a class="btn btn-primary" href="/signup/">
+                    Singup
+                </a>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

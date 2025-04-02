@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-9 offset-md3">
+            <h1 class="mb-4">Registro de Estcionamientos</h1>
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Espacio</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Placa</th>
+                        <th>Disponible</th>
+                        <th>Fecha de Entrada</th>
+                        <th>Fecha salida</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for registro in registro %}
+                    <tr>
+                        <td><p>{{ registro.espacio }}</p></td>
+                        <td><p>{{ registro.marca }}</p></td>
+                        <td><p>{{ registro.modelo }}</p></td>
+                        <td><p>{{ registro.placa }}</p></td>
+                        <td><p>{{ registro.estado }}</p></td>
+                        <td><p>{{ registro.fecha_entrada }}</p></td>
+                        <td><p>{{ registro.fecha_salida }}</p></td>
+                        <td>
+                            <a href="{% url 'registro_detail' registro.id %}" class="btn btn-dark btn-sm center"></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}
