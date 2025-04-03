@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'estaciomaniento.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        defaul='postgresql://postgre:postgres@localhost/postgres',
+        default='postgresql://postgre:postgres@localhost/postgres',
         conn_max_age=600
     )
 }
