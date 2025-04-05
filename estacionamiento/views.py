@@ -92,6 +92,7 @@ def registro_salida(request, registro_id):
         return redirect('registro')
     
 
+@login_required
 def eliminar_salida(request, registro_id):
     registro = get_object_or_404(Registro, pk=registro_id, user=request.user)
     if request.method == 'POST':
